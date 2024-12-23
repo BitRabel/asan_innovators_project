@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="teacher-dashboard">
+    <h2>Teacher Dashboard</h2>
+    <table class="attendance-table">
+        <thead>
+            <tr>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Period</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record['Student ID'] }}</td>
+                <td>{{ record['Student Name'] }}</td>
+                <td>{{ record['Period'] }}</td>
+                <td>{{ record['Timestamp'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<style>
+    .teacher-dashboard {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .teacher-dashboard h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .attendance-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    .attendance-table th, .attendance-table td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+
+    .attendance-table th {
+        background-color: #007bff;
+        color: white;
+    }
+
+    .attendance-table tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    .attendance-table tr:hover {
+        background-color: #ddd;
+    }
+</style>
+{% endblock %}

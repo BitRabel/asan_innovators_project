@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="student-dashboard">
+    <h2>Student Dashboard</h2>
+    <form method="POST" enctype="multipart/form-data" class="dashboard-form">
+        <div class="form-group">
+            <label for="teacher_id">Teacher ID:</label>
+            <input type="text" name="teacher_id" class="form-control" placeholder="Enter your teacher's username" required>
+        </div>
+        <div class="form-group">
+            <label for="period">Select Period:</label>
+            <select name="period" class="form-control" required>
+                <option value="Period 1">Period 1</option>
+                <option value="Period 2">Period 2</option>
+                <option value="Period 3">Period 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="qr_code">Upload QR Code:</label>
+            <input type="file" name="qr_code" class="form-control" accept="image/*" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Upload & Mark Attendance</button>
+    </form>
+</div>
+
+<style>
+    .student-dashboard {
+        max-width: 500px;
+        margin: 20px auto;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+    }
+
+    .student-dashboard h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+        text-align: left;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}

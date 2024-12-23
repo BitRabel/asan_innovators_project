@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="qr-container">
+    <h2>QR Code Generated</h2>
+    <p>Your QR code has been successfully generated. Please save it for future use.</p>
+    <div class="qr-code">
+        <img src="{{ url_for('static', filename='qr_codes/' + qr_path.split('/')[-1]) }}" alt="QR Code">
+    </div>
+    <a class="btn btn-primary" href="{{ url_for('login') }}">Go to Login</a>
+</div>
+
+<style>
+    .qr-container {
+        max-width: 500px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 20px;
+        background: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .qr-container h2 {
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    .qr-container p {
+        font-size: 16px;
+        margin-bottom: 20px;
+        color: #555;
+    }
+
+    .qr-code img {
+        max-width: 100%;
+        height: auto;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 5px;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: white;
+        background-color: #007bff;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+</style>
+{% endblock %}
